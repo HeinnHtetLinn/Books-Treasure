@@ -1,32 +1,32 @@
-<div>
-    <label>Title</label>
-    <input type="text" name="title" placeholder="title" value="<%= book.title %>">
+<div class="form-floating mb-3">
+  <input id="floatingInput" class="form-control" type="text" name="title" placeholder="title" value="<%= book.title %>">
+  <label for="floatingInput">Title</label>
 </div>
-<div>
-    <label>Author</label>
-    <select name="author">
-      <% authors.forEach(author => { %>
-        <% if (author.id === book.author) { %>
-          <option selected  value="<%= author.id %>"><%= author.name %></option>
+<div class="form-floating mb-3">
+  <select id="floatingSelect" class="form-select" name="author">
+    <% authors.forEach(author => { %>
+      <% if (author.id === book.author) { %>
+        <option selected  value="<%= author.id %>"><%= author.name %></option>
         <% } else { %>
           <option value="<%= author.id %>"><%= author.name %></option>
-        <% } %>
-      <% }) %>
-    </select>
+          <% } %>
+          <% }) %>
+  </select>
+    <label for="floatingSelect">Author</label>
 </div>
-<div>
-    <label>Publish Date</label>
-    <input type="date" name="publishDate" value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+<div class="form-floating mb-3">
+  <input class="form-control" id="floatingInput" type="date" name="publishDate" value="<%= book.publishDate == null ? '' : book.publishDate.toISOString().split('T')[0] %>">
+  <label for="floatingInput">Publish Date</label>
 </div>
-<div>
-    <label>Page Count</label>
-    <input type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+<div class="form-floating mb-3">
+  <input id="floatingInput" placeholder="PageCount" class="form-control" type="number" name="pageCount" min="1" value="<%= book.pageCount %>">
+  <label for="floatingInput">Page Count</label>
 </div>
-<div>
-    <label>Cover</label>
-    <input type="file" name="cover">
+<div class="mb-3">
+  <!-- <label>Cover</label> -->
+  <input type="file" name="cover" id="file" class="filepond">
 </div>
-<div>
-    <label>Description</label>
-    <textarea name="description"><%= book.description %></textarea>
+<div class="form-floating mb-3">
+  <textarea placeholder="Leave a comment here" id="floatingTextarea" class="form-control" name="description"><%= book.description %></textarea>
+  <label for="floatingTextarea">Description</label>
 </div>

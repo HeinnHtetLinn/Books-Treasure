@@ -1,13 +1,14 @@
-<h2>Search Books</h2>
-<form action="/books" method="GET">
-    <label>Book Name</label>
-    <input type="text" name="name" value="">
-    <button type="submit">Search</button>
-</form>
+<div class="container">
+    <h2>Search Books</h2>
+    <form action="/books" method="GET">
+            <div class="d-flex justify-content-end text-dark">
+                <div class="form-floating">
+                    <input class="form-control" placeholder="Enter Books Name" id="floatingInput" type="text" name="title" value="<%= searchOptions.title %>">
+                    <label for="floatingInput">Enter Search Name</label>
+                </div>
+                <button class="btn btn-secondary mx-4" type="submit">Search</button>
+            </div>
+    </form>
+</div>
 <br>
-<% books.forEach(book=>{ %>
-    <div><%= book.title %></div>
-    <!-- <img src="<%= book.coverImagePath %>"> -->
-    <%= book.coverImageName %>
-    <!-- "<%= book.coverImagePath %>" -->
-<% }) %>
+<%- include('../partials/bookCover') %>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div>
+        <b>Name:</b>
+        <p class="d-inline"><%= author.name %></p>
+        <div>
+            <a href="" class="btn btn-secondary">Edit</a>
+            <button class="btn btn-danger">DELETE</button>
+        </div>
+        <% if(booksByAuthor.length>0) {%>
+            <h2>Book By Author</h2>
+            <%- include("../partials/bookCover", {books:booksByAuthor})%>
+        <%} %>
+    </div>
+</div>

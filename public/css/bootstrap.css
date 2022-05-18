@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+*{
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+button:focus, button:active, button:hover{
+    box-shadow: none!important;
+    outline: 0;
+  }
+  .btn:focus, .btn:active, .btn:hover,
+  select:focus, select:active, select:hover,
+  textarea:focus, textarea:active, textarea:hover,
+  input:focus, input:active, input:hover{
+    box-shadow: none!important;
+    outline: 0;
+  }
+
+  /**
+ * FilePond Custom Styles
+ */
+.filepond--drop-label {
+	color: #4c4e53;
+}
+
+.filepond--label-action {
+	text-decoration-color: #babdc0;
+}
+
+.filepond--panel-root {
+	border-radius: 2em;
+	background-color: #edf0f4;
+	height: 1em;
+}
+
+.filepond--item-panel {
+	background-color: #595e68;
+}
+
+.filepond--drip-blob {
+	background-color: #7f8a9a;
+}
+.cardBgColor{
+  background-color:#fff;
+  color: #000;
+}

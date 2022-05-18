@@ -1,0 +1,7 @@
+<div class="container">
+    <form action="/books/<%=book.id %>?_method=PUT" method="POST">
+        <%- include("./_form_fields") %>
+        <button type="submit" class="btn btn-success">Change</button>
+        <a href="/books" class="btn btn-danger">Cancle</a>
+</form>
+</div>

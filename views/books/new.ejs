@@ -1,7 +1,8 @@
-<h2>New book</h2>
-
-<form action="/books" method="POST" enctype="multipart/form-data">
-    <%- include("./_form_fields.ejs") %>
-    <a href="/books">Cancle</a>
-    <button type="submit">Create</button>
-</form>
+<h2 class="text-center">Creating New book</h2>
+<div class="container text-dark">
+    <form action="/books" method="POST">
+        <%- include("./_form_fields.ejs") %>
+        <button class="btn btn-success me-2" type="submit">Create</button>
+        <a class="link-danger" href="/books">Cancle</a>
+    </form>
+</div>

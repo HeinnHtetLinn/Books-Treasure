@@ -1,7 +1,8 @@
-<h2>New Author</h2>
-
-<form action="/authors" method="POST">
-    <%- include("./_form_fields.ejs") %>
-    <a href="/authors">Cancle</a>
-    <button type="submit">Create</button>
-</form>
+<h2 class="text-center">New Author</h2>
+<div class="container">
+    <form  action="/authors" method="POST">
+        <%- include("./_form_fields.ejs") %>
+        <button class="btn btn-primary"type="submit">+Add Author</button>
+        <a class="link-danger mx-3" href="/authors">Cancle</a>
+    </form>
+</div>
