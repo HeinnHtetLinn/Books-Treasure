@@ -11,16 +11,13 @@
 </form>
 <br>
     <% authors.forEach(author=>{ %>
-        <div class="my-2 shadow text-dark bg-body rounded d-flex justify-content-between">
-            <div class="p-2">
-                <b class="text-uppercase fs-4">Author Name:</b>
-                <div class="d-inline fs-4"><%= author.name %></div>
-            </div>
-            <div class="d-flex align-items-center">
-                <a href="/authors/<%= author.id %>/edit" class="btn btn-sm btn-primary mx-1">Edit</a>
-                <a href="/authors/<%= author.id %>" class="btn btn-sm btn-warning mx-1">View</a>
-                <%- include("../partials/deleteForm", {url: `/authors/${author.id}`}) %>
-            </div>
+        <div class="my-2 text-dark rounded d-flex justify-content-between">
+            <a href="/authors/<%= author.id %>" style="text-decoration:none">
+                <div class="p-2 d-flex align-items-center">
+                    <img src="<%= author.profileImagePath %>" class="rounded-circle" width="50" height="50">
+                    <div class="px-2 fs-5"><%= author.name %></div>
+                </div>
+            </a>
         </div>
     <% }) %>
 </div>

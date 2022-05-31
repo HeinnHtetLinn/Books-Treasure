@@ -43,3 +43,32 @@ button:focus, button:active, button:hover{
   background-color:#fff;
   color: #000;
 }
+#profile.filepond--root {
+	width:170px;
+	margin: 0 auto;
+}
+
+/* Input customize */
+/* .round{
+  background-color: rgba(255, 255, 255, 0.3);
+  border:1px solid #000;
+  position: absolute;
+  bottom: 0;
+  right:0;
+  width: 32px;
+  height: 32px;
+  line-height: 33px;
+  text-align: center;
+  border-radius: 50%;
+  overflow: hidden;
+
+}
+.round input[type='file']{
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+  cursor: pointer;
+} */

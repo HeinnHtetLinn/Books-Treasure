@@ -22,8 +22,20 @@ router.get("/new" , (req,res)=>{
 })
 // Create Author Route
 router.post("/", async(req,res)=>{
+    let body = req.body.profile
+    // res.send(coverImage)
+    
+    if(body != null){
+        // res.redirect("/books/new")
+        const file = JSON.parse(body)
+        const profile = new Buffer.from(file.data, "base64")
+
     const author = new Author({
-        name : req.body.name
+        name : req.body.name,
+        email:req.body.email,
+        password:req.body.password,
+        profileImage:profile,
+        profileImageType:file.type
     })
     try{
         const newAuthor = await author.save()
@@ -34,6 +46,27 @@ router.post("/", async(req,res)=>{
             author:author,
             errorMessage:'Error Creating Author'
         })
+    }}
+})
+router.get("/login", async(req,res)=>{
+    res.render("authors/login")
+})
+// Login Route
+router.post("/login", async(req,res)=>{
+    const user = req.body
+    // console.log(user.email)
+    const correct = await Author.findOne({email:user.email})
+    try {
+        if(correct && correct.password === user.password){
+            res.redirect("/author/show")
+        }else{
+            res.render("authors/login",{
+                error:"You must register first"
+            })
+        }
+        
+    } catch {
+        res.redirect("authors/login")
     }
 })
 // Edit Author Route
@@ -49,10 +82,20 @@ router.get("/:id/edit", async(req, res) => {
 // Update Author Route
 router.put("/:id", async(req,res)=>{
     let author
+    let body = req.body.profile
+    
+    if(body != null){
+        const file = JSON.parse(body)
+        const profile = new Buffer.from(file.data, "base64")}
+
     try{
         author = await Author.findById(req.params.id)
-        console.log(author)
         author.name = req.body.name
+        author.password = req.body.password
+        author.profileImage = profile
+        author.email = req.body.email
+        author.profileImageType = file.type
+        
         await author.save()
         res.redirect(`/authors`)
     }catch{

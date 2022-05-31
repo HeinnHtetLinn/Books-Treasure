@@ -1,0 +1,20 @@
+<h2 class="text-center">LOGIN</h2>
+<div class="container text-dark">
+    <form action="/authors/login" method="post">
+        <% if(locals.error != null) { %>
+            <div class="alert alert-danger text-center"><%= error %></div>
+        <%}else{ %>
+            <div></div>
+        <%} %>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" type="email" name="email" placeholder="email">
+            <label for="floatingInput" class="form-control-label">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="floatingInput" type="password" name="password" placeholder="password" >
+            <label for="floatingInput" class="form-control-label">Password</label>
+        </div>  
+        <button class="btn btn-primary"type="submit">Login</button>
+    </form>
+</div>
+<p class="text-center">if You are not sign-up,You can register at here<a href="/authors/new">Register</a></p>

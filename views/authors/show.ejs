@@ -1,11 +1,32 @@
 <div class="container">
-    <div>
-        <b>Name:</b>
-        <p class="d-inline"><%= author.name %></p>
-        <div>
-            <a href="" class="btn btn-secondary">Edit</a>
-            <button class="btn btn-danger">DELETE</button>
+    <div class="d-flex justify-content-between py-2">
+        <div class="d-flex align-items-center">
+            <div><img src="<%= author.profileImagePath %>"  class="rounded-circle img-responsive" width="80" height="80"></div>
+            <div class="px-3">
+                <b>Name:</b>
+                <p class="d-inline"><%= author.name %></p>
+            </div>
         </div>
+        <div>
+            <div class="dropdown">
+                <button type="button" class="btn dropdown-toggle toggleButton" data-bs-toggle="dropdown">
+                    ...
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="/authors/<%= author.id %>/edit"><i class="fa-solid fa-pen"></i><p class="px-1 d-inline">Edit</p></a></li>
+                  <li>
+                      <div class="dropdown-item d-flex align-items-center">
+                        <i class="fa-solid fa-trash"></i>
+                        <form method="POST"  action="/authors/${author.id}/?_method=DELETE">
+                            <button class="btn p-0 m-0 px-1" type="submit">Delete</button>
+                        </form>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+        </div>
+    </div>
+    <div>
         <% if(booksByAuthor.length>0) {%>
             <h2>Book By Author</h2>
             <%- include("../partials/bookCover", {books:booksByAuthor})%>

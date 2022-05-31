@@ -1,4 +1,16 @@
+<div class="mb-3">
+    <!-- <label>Cover</label> -->
+    <input type="file" name="profile" id="profile" class="filepond profile" value="<%= author.profileImagePath %>">
+</div>
 <div class="form-floating mb-3">
     <input class="form-control" id="floatingInput" type="text" name="name" placeholder="Name" value="<%= author.name %>">
     <label for="floatingInput" class="form-control-label">Name</label>
+</div>
+<div class="form-floating mb-3">
+    <input class="form-control" id="floatingInput" type="email" name="email" placeholder="email" value="<%= author.email %>">
+    <label for="floatingInput" class="form-control-label">Email</label>
+</div>
+<div class="form-floating mb-3">
+    <input class="form-control" id="floatingInput" type="password" name="password" placeholder="password" value="<%= author.password %>">
+    <label for="floatingInput" class="form-control-label">Password</label>
 </div>
